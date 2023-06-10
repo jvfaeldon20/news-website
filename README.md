@@ -1,6 +1,6 @@
 # News Website
 a responsive news website that can read, like and remove news from the feed.  
-Link: https://jvfaeldon20.github.io/news-website/
+
 ---
 
 ### 🧰 Languages and Tools
