@@ -1,0 +1,349 @@
+@use "variables";
+@use "mixins";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Inter";
+    overflow-x: hidden;
+}
+
+header {
+    height: 84px;
+    background-color: variables.$primary-color;
+    width: 100vw;
+}
+
+nav {
+    @include mixins.container-width();
+    // width: 1200px;
+    // margin: auto;
+    // display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+
+nav > .nav-logo > h1 {
+    font-weight: variables.$font-weight-bold;
+    margin-left: -10px;
+    color: variables.$secondary-color;
+}
+
+nav > .nav-link {
+    margin-right: 50px;
+}
+
+nav > .nav-link > ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+nav > .nav-link > ul > li, a {
+    display: inline;
+    color: variables.$white-color;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: variables.$font-weight-regular;
+    padding: 0 2px;
+}
+
+nav > .nav-link > ul > li > .nav-link:hover{
+    color: variables.$secondary-color;
+}
+
+nav > .nav-toggle {
+    margin: 10px 10px 0 0;
+    font-size: 20px;
+    display: none;
+}
+
+.btn-signup{
+    font-weight: variables.$font-weight-bold;
+    color: variables.$default-color;
+    margin-left: 30px;
+}
+
+.btn-signup:hover{
+    color: variables.$active-color;
+}
+
+.btn-login{
+    display: inline-block;
+    font-weight: semibold;
+    color: variables.$default-color;
+    border: 1px solid variables.$default-color;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+.btn-login:hover {
+    border-color: variables.$active-color;
+    color: variables.$active-color;
+}
+
+.btn-toggle{
+    color: variables.$active-color;
+    border: 1px solid variables.$active-color;
+    border-radius: 50;
+    padding: 10px 12px;
+}
+
+.read{
+    color: variables.$primary-color;
+}
+
+.active {
+    color: variables.$active-color;
+}
+
+.inactive {
+    color: transparent;
+}
+
+main > .main-container {
+    @include mixins.container-width($display:grid);
+    grid-template-columns: repeat(3, 1fr);
+    // display: grid;
+    // width: 1200px;
+    // margin: auto;
+}
+
+main > .main-container > .card {
+    margin: 3rem 0 6rem 0;
+    height: 275px;
+    width: 350px;
+    background-color: variables.$light-gray-color;
+    position: relative;
+}
+
+main > .main-container > .card:hover .overlay {
+    opacity: 1;
+}
+
+main > .main-container > .card:hover .inactive{
+    color: variables.$primary-color;
+}
+
+main > .main-container > .card  > .img-size{
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+main > .main-container > .card > .card-item {
+    position: absolute;
+    top: 60%;
+    padding: 15px;
+    text-align: left;
+    background-color: #F8F9FC;
+    border-radius: 0 0 10px 10px;
+}
+
+main > .main-container > .card > .card-item > .read-mark > i{
+    margin-bottom: 10px;
+}
+
+main > .main-container > .card > .card-item > .card-header {
+    font-size: 20px;
+    font-weight: variables.$font-weight-bold;
+    display: block;
+    min-width: 320px;
+    min-height: 75px;
+}
+
+main > .main-container > .card > .card-item > hr {
+    margin: 15px 0;
+    color: variables.$default-color;
+}
+
+main > .main-container > .card > .card-item > .card-footer > ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+main > .main-container > .card > .card-item > .card-footer > ul > li, li > a{
+    padding: 10px;
+    color: variables.$default-color;
+    background-color: transparent;
+}
+
+main > .main-container > .card > .card-item > .card-footer > ul > li > a:hover{
+    color: variables.$active-color;
+}
+
+main > .main-container > .card > .card-item > .card-footer > ul > .publish-date {
+    border: 1px solid variables.$default-color;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+footer{
+    height: 274px;
+    background-color: #10131C;
+    margin-top: 3rem;
+    width: 100vw;
+}
+
+footer > .footer-container{
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
+    color: #fff;
+    padding: 50px;
+}
+
+footer > .footer-container > .footer-blog, .footer-socials{
+    background-color: #10131C;
+}
+
+footer > .footer-container > .footer-socials > h5 {
+    font-weight: lighter;
+}
+
+footer > .footer-container > .footer-blog > ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+footer > .footer-container > .footer-blog > ul > li, a {
+    display: inline;
+    color: variables.$white-color;
+    text-decoration: none;
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+footer > .footer-container > .footer-links > ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 20px 0 10px 0;
+}
+
+footer > .footer-container > .footer-links > .footer-socials > li, a {
+    display: inline;
+    color: variables.$white-color;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: left;
+    padding: 8px 2px;
+    background-color: variables.$primary-color;
+    border-radius: 50%;
+}
+
+footer > .footer-container > .footer-links > .footer-rights li a{
+    margin-top: 15%;
+    float: right;
+    font-size: 0.75rem;
+    opacity: 40%;
+    background-color: #10131C;
+    border-radius: 0;
+}
+
+.overlay {
+    position: absolute; 
+    top: 0; 
+    background:linear-gradient(rgb(25,33,64),(25,33,64, 0.5)); 
+    background: rgba(0, 0, 0, 0.5); 
+    color: #f1f1f1; 
+    width: 89%;
+    height: 125px;
+    border-radius: 10px 10px 0 0;
+    transition: .5s ease;
+    opacity:0;
+    color: variables.$white-color;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.overlay > a {
+    color: variables.$default-color;
+    background-color: transparent;
+    float: right;
+    padding-top: 0;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.overlay > a:hover{
+    color: variables.$active-color;
+}
+
+  
+
+@media screen and (max-width: 600px) {
+    header {
+        margin-bottom: 50px;
+    }
+
+    header > nav {
+        width: 100%;
+        background-color: variables.$primary-color;
+        float: right;
+    }
+
+    nav > .nav-logo > h1 {
+        margin: 5px 0 0 30px;
+    }
+
+    nav > .nav-link {
+        display: none;
+        text-align: center;
+        margin-top: 5%;
+        padding: 20px;
+        overflow: hidden;
+        transition: height 200ms;
+    }
+
+    nav > .nav-link > ul > li {
+        display: block;
+        padding: 20px 0;
+        background-color: variables.$primary-color;
+    }
+
+    .btn-signup {
+        margin-left: 0;
+    }
+
+    nav > .nav-toggle {
+        display: block;
+        margin: 5px 50px 0 0;
+    }
+
+    main > .main-container {
+        grid-template-columns: 1fr;
+        margin-left: 70px;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+    
+    footer {
+        height: auto;
+    }
+
+    footer > .footer-container{
+        width: 70%;
+        flex-direction: column;
+    }
+
+    footer > .footer-container > .footer-links {
+        margin-top: 3rem;
+    }
+
+    footer > .footer-container > .footer-links > .footer-rights {
+        display: flex;
+        margin-left: -10px;
+    }
+}

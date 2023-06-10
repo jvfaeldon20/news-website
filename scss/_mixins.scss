@@ -1,0 +1,5 @@
+@mixin container-width($width:1200px, $margin:auto, $display: flex){
+    width: $width;
+    margin: $margin;
+    display: $display;
+}
